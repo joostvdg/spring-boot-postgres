@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.User;
+import com.example.demo.model.Users;
 import com.example.demo.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +21,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public List<User> getAllUsers() {
+    public List<Users> getAllUsers() {
         LOG.info("Getting all users.");
-        return (List<User>) userRepository.findAll();
+        return (List<Users>) userRepository.findAll();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
-    public User getUser(@PathVariable Long userId) {
+    public Users getUser(@PathVariable Long userId) {
         LOG.info("Getting user with ID: {}.", userId);
         if (userRepository.findById(userId).isPresent()) {
             return userRepository.findById(userId).get();
@@ -36,7 +36,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public User addNewUsers(@RequestBody User user) {
+    public Users addNewUsers(@RequestBody Users user) {
         LOG.info("Saving user.");
         return userRepository.save(user);
     }
