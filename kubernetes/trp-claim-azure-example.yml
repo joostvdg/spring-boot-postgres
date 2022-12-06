@@ -1,0 +1,16 @@
+apiVersion: multi.ref.services.apps.tanzu.vmware.com/v1alpha1
+kind: PostgreSQLInstance
+metadata:
+  name: postgresql-0001
+  labels:
+    services.apps.tanzu.vmware.com/claimable: "true"
+spec:
+  compositionSelector:
+    matchLabels:
+      provider: azure
+  parameters:
+    location: "West Europe"
+    version: "12"
+    database: demo
+    collation: en_GB.utf8
+    storageClass: default
