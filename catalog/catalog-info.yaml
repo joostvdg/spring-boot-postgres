@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-boot-postgres
+  description: Tanzu Java Web App with Spring Boot 3, using a PostgreSQL database.
+  tags:
+    - app-accelerator
+    - java
+    - spring
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-boot-spring-01'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
