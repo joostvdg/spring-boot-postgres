@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: spring
+      POSTGRES_PASSWORD: spring
+      POSTGRES_USER: spring
+    ports:
+      - 8432:5432

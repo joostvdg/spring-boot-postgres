@@ -21,7 +21,7 @@ http POST :8080/create name=Andrea
 ## Create Workload
 
 ```shell
- tanzu apps workload create spring-boot-postgres-01 \
+ tanzu apps config create spring-boot-postgres-01 \
   --namespace default \
   --git-repo https://github.com/joostvdg/spring-boot-postgres.git \
   --git-branch main \
@@ -32,7 +32,7 @@ http POST :8080/create name=Andrea
 ```
 
 ```shell
-tanzu apps workload create spring-boot-postgres-01 \
+tanzu apps config create spring-boot-postgres-01 \
   --namespace default \
   --git-repo https://github.com/joostvdg/spring-boot-postgres.git \
   --git-branch main \
