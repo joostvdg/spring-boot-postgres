@@ -10,8 +10,8 @@ metadata:
     - web
     - tanzu
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-boot-spring-01'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-boot-postgres'
 spec:
   type: service
   lifecycle: experimental
-  owner: default-team
+  owner: teal
