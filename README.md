@@ -3,7 +3,7 @@ Demo project for Spring Boot with Postgresql &amp; Service Bindings
 
 ## Test
 
-Test 3
+Test 4
 
 ## Docker Postgresql
 
