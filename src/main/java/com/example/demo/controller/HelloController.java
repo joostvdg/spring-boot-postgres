@@ -16,7 +16,7 @@ public class HelloController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public Hello sayHello() {
         LOG.info("Saying hello");
-        return new Hello("Hell world!!!!");
+        return new Hello("Hell world!!!!!!");
     }
 
 }
