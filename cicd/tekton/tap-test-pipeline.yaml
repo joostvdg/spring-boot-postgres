@@ -1,0 +1,36 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: developer-defined-tekton-pipeline
+  labels:
+    apps.tanzu.vmware.com/pipeline: test
+spec:
+  workspaces:
+    - name: shared-workspace
+    - name: maven-settings
+  params:
+    - name: source-url
+    - name: source-revision
+  tasks:
+    - name: fetch-repository
+      taskRef:
+        name: fluxcd-repo-download
+      workspaces:
+        - name: output
+          workspace: shared-workspace
+      params:
+        - name: source-url  
+          value: $(params.source-url)
+    - name: maven-run
+      taskRef:
+        name: maven-test-containers
+      runAfter:
+        - fetch-repository
+      params:
+        - name: GOALS
+          value:
+            - clean
+            - verify
+      workspaces:
+        - name: output
+          workspace: shared-workspace
